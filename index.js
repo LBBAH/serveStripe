@@ -1,6 +1,3 @@
-
-
- 
 const stripe = require('stripe')('sk_test_51O7LnKDtJXAsj9ndOjlcgKH1U5u5PJiuur3iPMNb8chhE6VcpscyDtBdzly0yvaoUK4u1xOoQJuSV5MuQuihLduO00AbluE6H0');
 
 const express = require('express');
@@ -10,12 +7,17 @@ const app = express();
 app.use(bodyParser.json())
 
 
+process.on('uncaughtException', function (err) {
+  console.log(err);
+});
+
 app.get('/',(req, res)=>{
-    res.send("Prueba api stripe funcionando xd.")
+    res.send("Hello Folks..!!! Please subscribe my channel")
 })
 
 
-app.post('/payment-sheet', async (req, res) => {    
+app.post('/payment-sheet', async (req, res) => {
+    // Use an existing Customer ID if this is a returning customer.
 
     const {amount, currency} = req.body
 
