@@ -12,8 +12,7 @@ app.get('/',(req, res)=>{
 })
 
 
-app.post('/payment-sheet', async (req, res) => {
-    // Use an existing Customer ID if this is a returning customer.
+app.post('/payment-sheet', async (req, res) => {    
 
     const {amount, currency} = req.body
 
