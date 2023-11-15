@@ -1,11 +1,11 @@
  
 const stripe = require('stripe')('pk_test_51O7LnKDtJXAsj9ndZFuU9fbnOrnwH3x1XO7IWCpxdFbjmqYY5pQFHbnTvpGZCjAWDt7EiYV6mK62Icj7GrmTnKFv00fRgrtuhq');
 
-const express = require('express');
-const bodyParser = require('body-parser');
+import express from 'express';
+import { json } from 'body-parser';
 const app = express();
 
-app.use(bodyParser.json())
+app.use(json())
 
 app.get('/',(req, res)=>{
     res.send("Prueba api stripe funcionando xd.")
